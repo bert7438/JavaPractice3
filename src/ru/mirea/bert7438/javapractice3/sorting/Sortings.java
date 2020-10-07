@@ -33,13 +33,11 @@ public class Sortings {
 
         int i = low, j = high;
         while (i <= j) {
-            while (array[i].compareTo(opora) < 0) {
+            while (array[i].compareTo(opora) < 0)
                 i++;
-            }
 
-            while (array[j].compareTo(opora) > 0) {
+            while (array[j].compareTo(opora) > 0)
                 j--;
-            }
 
             if (i <= j) {
                 StudentGPA temp = array[i];
