@@ -6,24 +6,23 @@ public class Main {
         for (int i = 0; i < n; i++)
             studentArray[i] = new Student((int)(Math.random() * 10000));
 
-
-        for (int left = 0; left < studentArray.length; left++) {
-            int minInd = left;
-            for (int i = left; i < studentArray.length; i++) {
-                if (studentArray[i].compareTo(studentArray[minInd]) < 0) {
-                    minInd = i;
-                }
-            }
-            //swap(studentArray, left, minInd);
-            Student buf = studentArray[left];
-            studentArray[left] = studentArray[minInd];
-            studentArray[minInd] = buf;
-        }
+        Sortings.sortID(studentArray);
         for(int i = 0; i < n; i++)
             System.out.println(studentArray[i]);
     }
 
+    public static void sortGPA(int n){
+        StudentGPA[] students = new StudentGPA[n];
+        for(int i = 0; i<n; i++)
+            students[i] = new StudentGPA(Math.random() * 5);
+
+        Sortings.quickSort(students, 0, students.length-1);
+        for(int i = 0; i < n; i++)
+            System.out.println(students[i]);
+    }
+
     public static void main(String[] args) {
-        sortID(100);
+        //sortID(100);
+        sortGPA(100);
     }
 }
