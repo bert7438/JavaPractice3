@@ -12,7 +12,7 @@ public class Main {
         ниже будет ошибка компиляции из-за того, что s1 является объектом класса Shape,
         а класс Shape не имеет метода getRadius
          */
-        System.out.println(s1.getRadius());
+        //System.out.println(s1.getRadius());
 
         Circle c1 = (Circle) s1;
         ////c1 получен в результате приведения s1 к типу Circle,
@@ -25,7 +25,7 @@ public class Main {
         System.out.println(c1.getRadius());
 
         ////Shape - абстрактный класс, потому мы не можем создать экземпляры этого класса
-        Shape s2 = new Shape();
+        //Shape s2 = new Shape();
 
         Shape s3 = new Rectangle(1.0, 2.0, "RED", false);
         System.out.println(s3);
@@ -33,7 +33,7 @@ public class Main {
         System.out.println(s3.getPerimeter());
         System.out.println(s3.getColor());
         ////см. выше getRadius
-        System.out.println(s3.getLength());
+        //System.out.println(s3.getLength());
 
         Rectangle r1 = (Rectangle)s3;
         System.out.println(r1);
@@ -46,14 +46,14 @@ public class Main {
         System.out.println(s4.getArea());
         System.out.println(s4.getColor());
         ////см. getRadius
-        System.out.println(s4.getSide());
+        //System.out.println(s4.getSide());
 
         Rectangle r2 = (Rectangle)s4;
         System.out.println(r2);
         System.out.println(r2.getArea());
         System.out.println(r2.getColor());
         ////r2 является экземпляром класса Rectangle, у которого нет метода getSide
-        System.out.println(r2.getSide());
+        //System.out.println(r2.getSide());
         System.out.println(r2.getLength());
 
         Square sq1 = (Square)r2;
