@@ -54,4 +54,32 @@ public class Sortings {
         if (high > i)
             quickSort(array, i, high);
     }
+
+    public static Student[] mergeArrays(Student[] a1, Student[] a2) {
+        Student[] b = new Student[a1.length + a2.length];
+        Sortings.sortID(a1);
+        Sortings.sortID(a2);
+
+        int positionA1 = 0;
+        int positionA2 = 0;
+
+        for(int i = 0; i < b.length; i++) {
+            if(positionA1 == a1.length){
+                b[i] = a2[positionA2];
+                positionA2++;
+            } else if(positionA2 == a2.length){
+                b[i] = a1[positionA1];
+                positionA1++;
+            } else if(a1[positionA1].compareTo(a2[positionA2]) < 0){
+                b[i] = a1[positionA1];
+                positionA1++;
+            } else {
+                b[i] = a2[positionA2];
+                positionA2++;
+            }
+        }
+        return b;
+    }
+
+
 }
