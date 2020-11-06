@@ -38,6 +38,7 @@ public class WaitList<T> implements IWaitList<T> {
     }
 
     public WaitList() {
+        content = new ConcurrentLinkedQueue<>();
     }
 
     public WaitList(ConcurrentLinkedQueue<T> c) {
