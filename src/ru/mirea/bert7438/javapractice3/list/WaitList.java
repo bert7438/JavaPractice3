@@ -3,7 +3,13 @@ package ru.mirea.bert7438.javapractice3.list;
 import java.util.Collection;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-public class WaitList<T> implements IWaitList<T>{
+/**
+ * WaitList is an implementation of IWaitList interface based on {@link ConcurrentLinkedQueue}
+ *
+ * @param <T> type of elements
+ */
+
+public class WaitList<T> implements IWaitList<T> {
     protected ConcurrentLinkedQueue<T> content;
 
     @Override
@@ -29,5 +35,19 @@ public class WaitList<T> implements IWaitList<T>{
     @Override
     public boolean isEmpty() {
         return content.isEmpty();
+    }
+
+    public WaitList() {
+    }
+
+    public WaitList(ConcurrentLinkedQueue<T> c) {
+        this.content = c;
+    }
+
+    @Override
+    public String toString() {
+        return "WaitList{" +
+                "content=" + content +
+                '}';
     }
 }
