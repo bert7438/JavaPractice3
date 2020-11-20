@@ -28,8 +28,7 @@ public class UnfairWaitList<T> extends WaitList<T> {
             index++;
         }
         if (index != 0 && pass)
-            // FIXME: 07.11.2020 Implement removing
-            super.remove();
+            content.remove(content.toArray()[index]);
     }
 
     /**
